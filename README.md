@@ -2,6 +2,9 @@
 This repository is a class example used to gain
 experience with source control and TypeScript.
 
+## Live Website
+Check out the live website hosted by [GitHub Pages](https://joeprogrammer88.github.io/CPW204-Bookstore/)
+
 ## Getting Started
 
 ### Installing TypeScript
