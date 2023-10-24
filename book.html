@@ -16,12 +16,12 @@
     <h2>Add a Book</h2>
     <form>
         <label for="isbn">ISBN</label>
-        <input type="text" id="isbn">
+        <input type="text" id="isbn" value="1234567890123">
         <span class="error-msg"></span>
         <br>
 
         <label for="title">Title</label>
-        <input type="text" id="title">
+        <input type="text" id="title" value="DOM Manipulation">
         <span class="error-msg"></span>
         <br>
 
@@ -37,6 +37,9 @@
 
         <button type="button" id="add-book">Submit Book</button>
     </form>
+
+    <!-- Books added will be nested within -->
+    <div id="book-display"></div>
 
 </body>
 </html>

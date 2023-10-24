@@ -55,8 +55,15 @@ function isValidIsbn(data) {
     return regex.test(data);
 }
 function addBook(b) {
-    alert("Data was valid, book added");
     console.log(b);
+    let bookDiv = document.createElement("div");
+    let titleHeading = document.createElement("h2");
+    titleHeading.textContent = `${b.title} : ${b.isbn}`;
+    bookDiv.appendChild(titleHeading);
+    let bookDescription = document.createElement("p");
+    bookDescription.textContent = `This book was released on ${b.releaseDate} and costs ${b.price}`;
+    bookDiv.appendChild(bookDescription);
+    document.querySelector("#book-display").appendChild(bookDiv);
 }
 function clearAllErrorMessages() {
     let allSpans = document.querySelectorAll("form span.error-msg");
