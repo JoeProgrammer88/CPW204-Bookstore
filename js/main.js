@@ -61,7 +61,12 @@ function addBook(b) {
     titleHeading.textContent = `${b.title} : ${b.isbn}`;
     bookDiv.appendChild(titleHeading);
     let bookDescription = document.createElement("p");
-    bookDescription.textContent = `This book was released on ${b.releaseDate} and costs ${b.price}`;
+    const currencyFormatter = new Intl.NumberFormat("en-US", {
+        style: "currency",
+        currency: "USD",
+    });
+    let formattedPrice = currencyFormatter.format(b.price);
+    bookDescription.textContent = `Book was released on ${b.releaseDate} and costs ${formattedPrice}`;
     bookDiv.appendChild(bookDescription);
     document.querySelector("#book-display").appendChild(bookDiv);
 }

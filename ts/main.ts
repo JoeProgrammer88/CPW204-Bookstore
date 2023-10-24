@@ -129,7 +129,12 @@ function addBook(b:Book):void {
     bookDiv.appendChild(titleHeading);
     
     let bookDescription:HTMLParagraphElement = document.createElement("p");
-    bookDescription.textContent = `This book was released on ${b.releaseDate} and costs ${b.price}`;
+    const currencyFormatter = new Intl.NumberFormat("en-US", {
+        style: "currency",
+        currency: "USD",
+    });
+    let formattedPrice = currencyFormatter.format(b.price);
+    bookDescription.textContent = `Book was released on ${b.releaseDate} and costs ${formattedPrice}`;
     bookDiv.appendChild(bookDescription);
 
     // Add bookDiv to web page
